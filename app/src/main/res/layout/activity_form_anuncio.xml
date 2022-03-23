@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.FormAnuncioActivity"
+    android:background="@color/white">
+
+    <include
+        android:id="@+id/include3"
+        layout="@layout/toolbar_voltar_salvar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                app:cardCornerRadius="5dp"
+                android:onClick="verificaPermissacaoGaleria"
+                android:layout_marginTop="24dp"
+                android:layout_gravity="center_horizontal"
+                android:backgroundTint="@color/azul_padrao">
+
+                <ImageView
+                    android:id="@+id/img_produto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_foto"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+            <EditText
+                android:id="@+id/edit_titulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Titulo"
+                android:inputType="text"
+                android:background="@drawable/bg_edit"
+                android:padding="16dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_edit"
+                android:layout_marginEnd="24dp" >
+
+                <EditText
+                    android:id="@+id/edit_descricao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Descrição"
+                    android:inputType="text"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:backgroundTint="@android:color/white"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Quartos"
+                        android:textAlignment="center"
+                        android:textColor="@color/azul_padrao"/>
+                    <EditText
+                        android:id="@+id/edit_quartos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:hint="Ex 3"
+                        android:inputType="number"
+                        android:background="@drawable/bg_edit"
+                        android:padding="16dp" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Banheiros"
+                        android:textAlignment="center"
+                        android:textColor="@color/azul_padrao"/>
+                    <EditText
+                        android:id="@+id/edit_banheiros"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:hint="Ex 2"
+                        android:inputType="number"
+                        android:background="@drawable/bg_edit"
+                        android:padding="16dp" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Garagem"
+                        android:textAlignment="center"
+                        android:textColor="@color/azul_padrao"/>
+                    <EditText
+                        android:id="@+id/edit_garagens"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:hint="Ex 1"
+                        android:inputType="number"
+                        android:background="@drawable/bg_edit"
+                        android:padding="16dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/cb_disponivel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/azul_padrao"
+                android:layout_marginStart="24dp"
+                android:textColor="@color/azul_padrao"
+                android:text="Disponível"
+                android:checked="true" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center_horizontal"
+                android:indeterminateTint="@color/azul_padrao"
+                android:visibility="gone"
+                tools:visibility="visible"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
